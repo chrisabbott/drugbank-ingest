@@ -22,7 +22,7 @@ pyenv activate "$VIRTUALENV" &> /dev/null
 pip install -r requirements.txt --quiet --disable-pip-version-check
 
 # Run
-python ingest.py --verbosity=DEBUG scrape default
+python ingest.py --verbosity=DEBUG scrape-all
 
 # Clean up virtualenv
 # pyenv virtualenv-delete --force "$VIRTUALENV"
