@@ -1,4 +1,4 @@
-# DrugBank Scraper
+# DrugBank Ingestion
 **This is a quick project that was used to scrape the following drugs from DrugBank:**
 - "DB00619"
 - "DB01048"
