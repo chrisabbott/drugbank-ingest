@@ -1,4 +1,3 @@
-#!/bin/bash
 import logging
 
 from requests_html import HTMLSession
@@ -27,7 +26,7 @@ class DrugBankCommon(object):
     def SMILES(self, response):
         # We have to render javascript here to avoid (presumably) CloudFlare email obfuscation.
         # SMILES strings preceding @ characters are probably incorrectly classified as emails by CloudFlare.
-        #
+        # We should find another way to do this, as this is currently the biggest speed bottleneck in this script.
         # Details: https://support.cloudflare.com/hc/en-us/articles/200170016-What-is-Email-Address-Obfuscation-
         response.html.render()
         try:
@@ -77,10 +76,10 @@ class DrugBankScraper(DrugBankCommon):
             "targets": self.targets(response)
         }
 
+
 """
 class AsyncDrugBankScraper(DrugBankCommon):
-    # TODO: Implement this class when/if you want to scrape more data more quickly
-    #       using async scraping.
+    # TODO: Implement this class if you want to use async scraping.
 
     def __init__(self):
         self._session = None
