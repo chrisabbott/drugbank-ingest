@@ -15,5 +15,9 @@
 **To run a containerized version of this project (requires docker):**  
 ```git clone https://github.com/chrisabbott/drugbank-ingest.git && cd drugbank-ingest && docker build -t drugbank-ingest . && docker run -it drugbank-ingest```
 
+**To run interactively in a container (requires docker):**  
+```git clone https://github.com/chrisabbott/drugbank-ingest.git && cd drugbank-ingest && docker build -t drugbank-ingest . && docker run -it drugbank-ingest /bin/bash```  
+```./run.sh```
+
 **Note about scraping from DrugBank**  
 As per DrugBank terms and conditions, this is not intended to be used for bulk scraping.
